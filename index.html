@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 9
@@ -28,7 +29,7 @@
   <body>
     <header class="row main-header3">
       <div class="row this-inner">
-        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
+        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
           <div class="header-right-info pull-right">
             <ul>
               <li>
@@ -234,13 +235,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <form id="contactForm" action="#" class="row m0 request-service-form">
+            <form id="contactForm" class="row m0 request-service-form">
               <h2 class="this-title">REquest Service</h2>
               <p>Enter your contact details here to help us serve you better & faster.</p>
-              <input id="name" type="text" name="name" placeholder="Name" class="form-control">
+              <input id="name" type="text" name="name" required placeholder="Name" class="form-control">
               <input id="email" type="email" name="email" placeholder="Email" class="form-control">
-              <input id="telephone" type="tel" name="telephone" placeholder="Telephone" class="form-control">
-              <textarea id="help_text" name="help_text" placeholder="How may we help you?" class="form-control"></textarea>
+              <input id="telephone" type="tel" name="phone" required placeholder="Phone" class="form-control">
+              <textarea id="help_text" name="message" placeholder="How may we help you?" class="form-control"></textarea>
               <input type="submit" value="get quote" class="btn btn-primary">
             </form>
           </div>
@@ -462,6 +463,26 @@
         
       </div>
     </footer>
+    
+    <script>
+      $("#contactForm").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbw_7XfOA01FUmJsJrVlE8dQfIBcMDhgzYT3NF7rGGkA4Aae10o7h-IfAE95AMpEa_rA/exec",
+              data:$("#contactForm").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
     <script src="js/jquery-2.2.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTI1BZJKFCeJ8g9O01CMZ4QvVCfdPYkrE"></script>
     <script src="js/gmaps.min.js"></script>

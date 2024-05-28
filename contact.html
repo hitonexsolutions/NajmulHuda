@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 9
@@ -28,7 +29,7 @@
   <body>
     <header class="row main-header3">
       <div class="row this-inner">
-        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
+        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
           <div class="header-right-info pull-right">
             <ul>
               <li>
@@ -112,10 +113,10 @@
         <p>Get in touch with Najmul Huda today and experience the difference in quality and professionalism. Whether you have inquiries about our services, need a consultation, or want to discuss your project requirements, our friendly team is here to help. Contact us via phone, email, or through our website to start your journey towards exceptional technical solutions with Najmul Huda.        </p>
         <div class="row">
           <div class="col-md-8">
-            <form id="contactForm" action="https://designarc.biz/demos/plumbing/Demo_3/contact_process.php" class="row contact-form">
-              <input id="name" type="text" name="name" placeholder="Name" class="form-control">
+            <form id="contactForm" class="row contact-form">
+              <input id="name" type="text" required name="name" placeholder="Name" class="form-control">
               <input id="email" type="email" name="email" placeholder="Email" class="form-control">
-              <input id="subject" type="text" name="subject" placeholder="Subject" class="form-control">
+              <input id="subject" type="text" required name="phone" placeholder="Phone" class="form-control">
               <textarea id="message" name="message" placeholder="Message" class="form-control"></textarea>
               <input type="submit" value="Submit Now" class="btn btn-primary contact-submit">
             </form>
@@ -204,6 +205,29 @@
         
       </div>
     </footer>
+    <script>
+      $("#contactForm").submit((e)=>{
+        console.log("1");
+          e.preventDefault()
+          console.log("2");
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbw_7XfOA01FUmJsJrVlE8dQfIBcMDhgzYT3NF7rGGkA4Aae10o7h-IfAE95AMpEa_rA/exec",
+              data:$("#contactForm").serialize(),
+              method:"post",
+              success:function (response){
+                  console.log("3");
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  console.log("4");
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
     <script src="js/jquery-2.2.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTI1BZJKFCeJ8g9O01CMZ4QvVCfdPYkrE"></script>
     <script src="js/gmaps.min.js"></script>

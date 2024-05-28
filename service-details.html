@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 9
@@ -28,7 +29,7 @@
   <body>
     <header class="row main-header3">
       <div class="row this-inner">
-        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
+        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
           <div class="header-right-info pull-right">
             <ul>
               <li>
@@ -553,24 +554,7 @@
     <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="vendors/owl.carousel/owl.carousel.min.js"></script>
     <script src="js/theme.js"></script>
-    <script>
-      $(document).ready(function() {
-       var getUrl = window.location.href;
-       var Url = getUrl.split("service=");
-       $(".single-services-menu li").each( function( index, element ){
-         var compare = $(this).find("a").attr("href");
-         if("#"+Url[1] == compare)
-         {
-          $(this).addClass("active");
-          $(".s_service-content #"+Url[1]).addClass("active");
-         }
-         else
-         {
-          $(this).removeClass("active");
-         }
-       });
-      });
-    </script>
+   
   </body>
 
 <!-- Mirrored from designarc.biz/demos/plumbing/Demo_3/service-details.html?service=serviceNo-9 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 May 2024 06:10:13 GMT -->

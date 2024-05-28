@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--if lt IE 9
@@ -28,7 +29,7 @@
   <body>
     <header class="row main-header3">
       <div class="row this-inner">
-        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
+        <div class="container"><a href="index.html" class="main-logo" style="color: white; font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif;"><img src="images/homepage/logo.png" alt=""><span class="logo-txt">&emsp; Reliable Repairs, Refreshing Results</span></a>
           <div class="header-right-info pull-right">
             <ul>
               <li>
@@ -93,7 +94,7 @@
         </nav>
       </div>
     </div>
-    <section class="row page-cover3">
+    <section class="row page-cover3 ">
       <div class="container">
         <h2 class="page-title">Get Appointment</h2>
         <h4 class="page-subtitle">You can call to schedule an appointment 24 hours a day, 365 days a week.</h4>
@@ -112,17 +113,17 @@
         <h2 class="section-title">Fill Out the Appointment Request Form Online and We’ll Contact You!</h2>
         <div class="row">
           <div class="col-md-9">
-            <form id="appointmentForm" action="https://designarc.biz/demos/plumbing/Demo_3/appointment_process.php" class="appointment-form">
-              <div class="row input-set">
+            <form id="appointmentForm" class="appointment-form">
+              <div class="row input-set set-required">
                 <h5 class="input-set-label">Is this service for</h5>
-                <input id="service_for1" type="radio" name="service_for" value="Home Service" class="ga-radio">
+                <input id="service_for1" required type="radio" name="service_for" value="Home Service" class="ga-radio">
                 <label for="service_for1">Your Home</label>
-                <input id="service_for2" type="radio" name="service_for" value="Business Service" class="ga-radio">
+                <input id="service_for2" required type="radio" name="service_for" value="Business Service" class="ga-radio">
                 <label for="service_for2">Your Business</label>
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label">Select a convenient day for your service:</h5>
-                <select id="convenient_month" name="convenient_month" class="month-picker form-control">
+                <select id="convenient_month" required name="convenient_month" class="month-picker form-control">
                   <option value="Jan">Jan</option>
                   <option value="Feb">Feb</option>
                   <option value="March">March</option>
@@ -136,7 +137,7 @@
                   <option value="Nov">Nov</option>
                   <option value="Dec">Dec</option>
                 </select>
-                <select id="convenient_day" name="convenient_day" class="day-picker form-control">
+                <select id="convenient_day" required name="convenient_day" class="day-picker form-control">
                   <option value="01">01</option>
                   <option value="02">02</option>
                   <option value="03">03</option>
@@ -169,31 +170,9 @@
                   <option value="30">30</option>
                   <option value="31">31</option>
                 </select>
-                <select id="convenient_year" name="convenient_year" class="year-picker form-control">
-                  <option value="2001">2001</option>
-                  <option value="2002">2002</option>
-                  <option value="2003">2003</option>
-                  <option value="2004">2004</option>
-                  <option value="2005">2005</option>
-                  <option value="2006">2006</option>
-                  <option value="2007">2007</option>
-                  <option value="2008">2008</option>
-                  <option value="2009">2009</option>
-                  <option value="2010">2010</option>
-                  <option value="2011">2011</option>
-                  <option value="2012">2012</option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016" selected="">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
+                <select id="convenient_year" required name="convenient_year" class="year-picker form-control">
+             
+                  <option value="2024" selected="">2024</option>
                   <option value="2025">2025</option>
                   <option value="2026">2026</option>
                   <option value="2027">2027</option>
@@ -224,7 +203,7 @@
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label">Select a convenient time</h5>
-                <select id="convenient_time" name="convenient_time" class="time-picker form-control">
+                <select id="convenient_time" required name="convenient_time" class="time-picker form-control">
                   <option value="0" selected="">Select Time</option>
                   <option value="09:00 AM">09:00 AM</option>
                   <option value="10:00 AM">10:00 AM</option>
@@ -242,7 +221,7 @@
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label">your first name and last name</h5>
-                <input id="caname" type="text" name="name" class="form-control">
+                <input id="caname" required type="text" name="name" class="form-control">
               </div>
               <div class="row input-set">
                 <h5 class="input-set-label">your company</h5>
@@ -250,70 +229,69 @@
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label ">jobsite address</h5>
-                <input id="jobsite_address01" type="text" name="jobsite_address01" class="form-control">
-                <input id="jobsite_address02" type="text" name="jobsite_address02" class="form-control">
+                <input id="jobsite_address" required type="text" name="jobsite_address01" class="form-control">
                 <div class="row">
                   <div class="col-xs-4">
                     <h5 class="input-set-sublabel">City</h5>
-                    <input id="jobsite_city" type="text" name="jobsite_city" class="form-control">
+                    <input id="jobsite_city" required type="text" name="jobsite_city" class="form-control">
                   </div>
                   <div class="col-xs-4">
                     <h5 class="input-set-sublabel">State</h5>
-                    <input id="jobsite_state" type="text" name="jobsite_state" class="form-control">
+                    <input id="jobsite_state" required type="text" name="jobsite_state" class="form-control">
                   </div>
                   <div class="col-xs-4">
                     <h5 class="input-set-sublabel">Zip Code</h5>
-                    <input id="jobsite_zip" type="text" name="jobsite_zip" class="form-control">
+                    <input id="jobsite_zip" required type="text" name="jobsite_zip" class="form-control">
                   </div>
                 </div>
               </div>
-              <div class="row input-set">
-                <div class="row set-required">
+              <div class="row input-set set-required">
+                <div class="row ">
                   <div class="col-xs-6">
                     <h5 class="input-set-label">jobsite phone number</h5>
-                    <input id="jobsite_phone" type="tel" name="jobsite_phone" class="form-control">
+                    <input id="jobsite_phone" required type="tel" name="jobsite_phone" class="form-control">
                   </div>
                   <div class="col-xs-6">
                     <h5 class="input-set-label">cell lphone number</h5>
-                    <input id="cell_phone" type="tel" name="cell_phone" class="form-control">
+                    <input id="cell_phone"  type="tel" name="cell_phone" class="form-control">
                   </div>
                 </div>
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label">email address</h5>
-                <input id="email" type="email" name="email" class="form-control">
+                <input id="email" required type="email" name="email" class="form-control">
               </div>
               <div class="row input-set set-required">
                 <h5 class="input-set-label">service type</h5>
-                <input id="service_type1" type="radio" name="service_type" value="Plumbing" class="ga-radio">
+                <input id="service_type1" required type="radio" name="service_type" value="Plumbing" class="ga-radio">
                 <label for="service_type1">Electrical Fittings & Fixture Services</label>
-                <input id="service_type2" type="radio" name="service_type" value="Drain Cleaning" class="ga-radio">
+                <input id="service_type2" required type="radio" name="service_type" value="Drain Cleaning" class="ga-radio">
                 <label for="service_type2">False Ceiling & Light Partitions Installation</label>
-                <input id="service_type3" type="radio" name="service_type" value="Heating &amp; Cooling" class="ga-radio">
+                <input id="service_type3" required type="radio" name="service_type" value="Heating &amp; Cooling" class="ga-radio">
                 <label for="service_type3">AC Installation & Maintenance service</label>
-                <input id="service_type4" type="radio" name="service_type" value="Water &amp; Gas Repairs" class="ga-radio">
+                <input id="service_type4" required type="radio" name="service_type" value="Water &amp; Gas Repairs" class="ga-radio">
                 <label for="service_type4">Plumbing & Sanitary Contracting</label>
-                <input id="service_type5" type="radio" name="service_type" value="Sewer line Cleaning and Reapirs" class="ga-radio">
+                <input id="service_type5" required type="radio" name="service_type" value="Sewer line Cleaning and Reapirs" class="ga-radio">
                 <label for="service_type5">Carpentry & Flooring Contracting</label>
-                <input id="service_type6" type="radio" name="service_type" value="Plumbing" class="ga-radio">
+                <input id="service_type6" required type="radio" name="service_type" value="Plumbing" class="ga-radio">
                 <label for="service_type6">Plaster Works</label>
-                <input id="service_type7" type="radio" name="service_type" value="Drain Cleaning" class="ga-radio">
+                <input id="service_type7" required type="radio" name="service_type" value="Drain Cleaning" class="ga-radio">
                 <label for="service_type7">Floor & Wall Tiling Works</label>
-                <input id="service_type8" type="radio" name="service_type" value="Heating &amp; Cooling" class="ga-radio">
+                <input id="service_type8" required type="radio" name="service_type" value="Heating &amp; Cooling" class="ga-radio">
                 <label for="service_type8">Electromechanical Equipment Service</label>
-                <input id="service_type9" type="radio" name="service_type" value="Water &amp; Gas Repairs" class="ga-radio">
+                <input id="service_type9" required type="radio" name="service_type" value="Water &amp; Gas Repairs" class="ga-radio">
                 <label for="service_type9">Engraving & Ornamentation Works</label>
-                <input id="service_type10" type="radio" name="service_type" value="Sewer line Cleaning and Reapirs" class="ga-radio">
+                <input id="service_type10" required type="radio" name="service_type" value="Sewer line Cleaning and Reapirs" class="ga-radio">
                 <label for="service_type10">Painting Contracting</label>
-                <input id="service_type11" type="radio" name="service_type" value="Other" class="ga-radio">
+                <input id="service_type11" required type="radio" name="service_type" value="Other" class="ga-radio">
                 <label for="service_type11">Other  (Specify below)</label>
               </div>
               <div class="row input-set">
                 <h5 class="input-set-label">others</h5>
                 <textarea id="other_service_types" name="other_service_types" class="form-control"></textarea>
               </div>
-              <div class="row input-set set-required">
-                <h5 class="input-set-label">Brief Description of Problem:</h5>
+              <div class="row input-set">
+                <h5 class="input-set-label">Brief Description of Service:</h5>
                 <textarea id="brief_desc" name="brief_desc" class="form-control"></textarea>
               </div>
               <div class="row input-set">
@@ -395,6 +373,25 @@
         
       </div>
     </footer>
+    <script>
+      $("#appointmentForm").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbx4c4WZbGboPoXEByDU6M4d2cwq_9fp0VTZfGp_0srYYXs4OgLbYnJu7tQQjg2GRJ8/exec",
+              data:$("#appointmentForm").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
     <script src="js/jquery-2.2.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTI1BZJKFCeJ8g9O01CMZ4QvVCfdPYkrE"></script>
     <script src="js/gmaps.min.js"></script>
